@@ -63,7 +63,7 @@ export default function Home() {
             </h1>
             
             <p className="text-lg md:text-xl text-slate-400 mb-10 max-w-2xl mx-auto leading-relaxed font-medium animate-fade-in opacity-0" style={{ animationDelay: '300ms' }}>
-              Discover the AI investing apps investors are using to automate trading, manage risk, and simplify portfolio management.
+              Discover the AI investing apps investors are exploring to automate trading, monitor markets, and simplify portfolio management.
             </p>
 
             <div className="animate-fade-in opacity-0" style={{ animationDelay: '400ms' }}>
@@ -90,7 +90,7 @@ export default function Home() {
                 </Link>
                 <p className="text-sm text-slate-500 font-medium mt-4">
                   Most investors still trade manually.<br/>
-                  <span className="text-slate-400">These tools automate the process.</span>
+                  <span className="text-slate-400">These apps automate the process.</span>
                 </p>
               </div>
             </div>
@@ -133,9 +133,9 @@ export default function Home() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-10 relative">
                <div className="hidden md:block absolute top-12 left-[15%] right-[15%] h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
                
-               <StepCard step="1" icon={<Link2 size={24} className="text-indigo-400"/>} title="Connect your crypto exchange account." />
-               <StepCard step="2" icon={<Settings size={24} className="text-purple-400"/>} title="Choose an automated strategy or preset." />
-               <StepCard step="3" icon={<Search size={24} className="text-emerald-400"/>} title="Allow the system to monitor markets and execute trades automatically." />
+               <StepCard step="1" icon={<Link2 size={24} className="text-indigo-400"/>} title="Connect your exchange." />
+               <StepCard step="2" icon={<Settings size={24} className="text-purple-400"/>} title="Choose an automated strategy." />
+               <StepCard step="3" icon={<Search size={24} className="text-emerald-400"/>} title="Let the platform monitor markets and execute trades." />
             </div>
          </div>
       </section>
@@ -157,8 +157,8 @@ export default function Home() {
            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
               <CategoryCard title="AI Investing Apps" href="/tools" />
               <CategoryCard title="Crypto Exchanges" href="/tools" />
-              <CategoryCard title="Portfolio Automation" href="/tools" />
-              <CategoryCard title="Risk Monitoring Tools" href="/tools" />
+              <CategoryCard title="Portfolio Monitoring Tools" href="/tools" />
+              <CategoryCard title="Risk Protection Platforms" href="/tools" />
            </div>
         </div>
       </section>
@@ -275,7 +275,7 @@ export default function Home() {
           </p>
           <div className="p-6 border border-white/5 rounded-2xl bg-[#0f172a] inline-block">
              <p className="text-slate-400 font-bold italic text-sm">
-               "Automation does not eliminate risk but helps remove emotional decision-making from investing."
+               &quot;Automation does not eliminate risk but helps remove emotional decision-making from investing.&quot;
              </p>
           </div>
         </div>

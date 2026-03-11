@@ -17,7 +17,7 @@ export const tools: Tool[] = [
     name: "Aurum AI Investing Platform",
     category: "AI Investing Apps",
     tagline: "Explore automated crypto portfolio management.",
-    description: "Aurum is an AI-powered financial platform designed to help investors explore automated crypto portfolio management and algorithmic trading strategies. The platform combines AI monitoring tools with automated trading systems to allow investors to experiment with automation rather than manually trading markets.",
+    description: "Aurum is an AI-powered platform that allows investors to explore automated crypto portfolio strategies and algorithmic trading systems.",
     pros: ["AI trading automation", "Portfolio monitoring tools", "Crypto ecosystem integration", "Automation-driven strategies"],
     cons: ["Not a guaranteed profit system", "Requires monitoring and strategy selection"],
     affiliateLink: "https://backoffice.aurum.foundation/u/1W145K",

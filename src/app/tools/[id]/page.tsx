@@ -146,7 +146,7 @@ export default async function ToolDetailPage({ params }: { params: Promise<{ id:
                   <div className="mb-8 p-5 bg-indigo-500/5 border border-indigo-500/10 rounded-2xl relative">
                     <h4 className="text-white font-bold text-sm mb-2">What Does This Platform Actually Do?</h4>
                     <p className="text-slate-400 text-xs leading-relaxed">
-                      Instead of watching charts all day, investors use automation platforms to monitor markets, execute strategies, and rebalance portfolios automatically. These systems do not eliminate risk, but they help investors experiment with automation rather than manually trading markets.
+                      AI platforms monitor markets, execute strategies, and rebalance portfolios automatically. They allow investors to experiment with automation instead of manually trading markets.
                     </p>
                   </div>
 
@@ -156,7 +156,7 @@ export default async function ToolDetailPage({ params }: { params: Promise<{ id:
                     rel="noopener noreferrer"
                     className="w-full py-5 primary-gradient rounded-2xl font-bold text-white soft-shadow hover:brightness-110 active:scale-[0.98] transition-all duration-300 flex items-center justify-center space-x-3 group"
                   >
-                    <span>Explore Platform</span>
+                    <span>{tool.name === "Aurum AI Investing Platform" ? "Explore Aurum Platform" : "Explore Platform"}</span>
                     <ArrowUpRight size={18} strokeWidth={2.5} />
                   </a>
 
