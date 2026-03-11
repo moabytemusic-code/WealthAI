@@ -54,16 +54,16 @@ export default function Home() {
             {/* Hook */}
             <div className="inline-flex items-center space-x-2 px-4 py-2 bg-indigo-500/10 border border-indigo-500/20 rounded-full text-indigo-400 text-xs font-bold uppercase tracking-widest mb-10 animate-fade-in opacity-0" style={{ animationDelay: '100ms' }}>
               <Zap size={14} className="text-indigo-400" />
-              <span>Free Guide — 7 AI Tools Automating Crypto Strategies</span>
+              <span>Free Guide — 7 AI Apps Automating Crypto Investing</span>
             </div>
             
             <h1 className="text-5xl md:text-7xl font-bold text-white mb-8 leading-[1.05] animate-fade-in opacity-0 tracking-tight" style={{ animationDelay: '200ms' }}>
-              AI Tools That Help <br />
-              <span className="text-gradient">Automate Investing in 2026</span>
+              AI Apps That Are Changing <br />
+              <span className="text-gradient">How People Invest</span>
             </h1>
             
             <p className="text-lg md:text-xl text-slate-400 mb-10 max-w-2xl mx-auto leading-relaxed font-medium animate-fade-in opacity-0" style={{ animationDelay: '300ms' }}>
-              Discover the AI tools investors are using to automate trading, manage risk, and build smarter portfolios.
+              Discover the AI investing apps investors are using to automate trading, manage risk, and simplify portfolio management.
             </p>
 
             <div className="animate-fade-in opacity-0" style={{ animationDelay: '400ms' }}>
@@ -85,7 +85,7 @@ export default function Home() {
                   href="/guides"
                   className="w-full sm:w-auto px-10 py-5 primary-gradient rounded-full font-bold text-white soft-shadow hover:brightness-110 active:scale-95 transition-all flex items-center justify-center space-x-3 group"
                 >
-                  <span>Download the Free AI Investing Guide</span>
+                  <span>Get the Free AI Investing Guide</span>
                   <ChevronRight size={18} className="group-hover:translate-x-1 transition-transform" />
                 </Link>
                 <p className="text-sm text-slate-500 font-medium mt-4">
@@ -126,16 +126,16 @@ export default function Home() {
       <section className="py-24">
          <div className="container mx-auto px-6 max-w-5xl">
             <div className="text-center mb-16">
-               <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">How AI Investing Works</h2>
-               <p className="text-slate-400 text-lg">A simple framework to transition from manual to automated.</p>
+               <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">Is AI Investing Complicated?</h2>
+               <p className="text-slate-400 text-lg">Modern AI investing apps are designed for beginners. Most platforms follow a simple process:</p>
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-10 relative">
                <div className="hidden md:block absolute top-12 left-[15%] right-[15%] h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
                
-               <StepCard step="1" icon={<Search size={24} className="text-indigo-400"/>} title="Discover AI investing apps." />
-               <StepCard step="2" icon={<Link2 size={24} className="text-purple-400"/>} title="Connect supported exchanges." />
-               <StepCard step="3" icon={<Settings size={24} className="text-emerald-400"/>} title="Automate strategies." />
+               <StepCard step="1" icon={<Link2 size={24} className="text-indigo-400"/>} title="Connect your crypto exchange account." />
+               <StepCard step="2" icon={<Settings size={24} className="text-purple-400"/>} title="Choose an automated strategy or preset." />
+               <StepCard step="3" icon={<Search size={24} className="text-emerald-400"/>} title="Allow the system to monitor markets and execute trades automatically." />
             </div>
          </div>
       </section>
@@ -145,8 +145,8 @@ export default function Home() {
         <div className="container mx-auto px-6 max-w-6xl">
            <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
               <div>
-                <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">Discover AI Investing Apps</h2>
-                <p className="text-slate-400 text-lg">Browse curated platforms replacing manual effort.</p>
+                <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">Explore AI Investing Apps</h2>
+                <p className="text-slate-400 text-lg">Browse automation platforms investors are exploring to simplify crypto investing and portfolio management.</p>
               </div>
               <Link href="/tools" className="inline-flex items-center space-x-2 text-indigo-400 hover:text-indigo-300 font-bold tracking-widest uppercase text-xs transition-colors">
                 <span>View Full Directory</span>
@@ -175,6 +175,56 @@ export default function Home() {
             <span className="text-lg md:text-xl font-bold tracking-widest text-white uppercase">BYBIT</span>
             <span className="text-lg md:text-xl font-bold tracking-widest text-white uppercase">COINBASE</span>
             <span className="text-lg md:text-xl font-bold tracking-widest text-white uppercase">UNISWAP</span>
+          </div>
+        </div>
+      </section>
+
+      {/* Comparison Table Section */}
+      <section className="py-24 bg-[#020617]/50 border-b border-white/5">
+        <div className="container mx-auto px-6 max-w-5xl">
+          <div className="text-center mb-16">
+             <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">Top AI Investing Apps <span className="text-gradient">Compared</span></h2>
+             <p className="text-slate-400 text-lg text-balance mx-auto max-w-2xl">
+               Evaluate leading automation apps to find the best platform for your risk tolerance and goals.
+             </p>
+          </div>
+          
+          <div className="overflow-x-auto pb-6">
+             <div className="min-w-[800px] w-full rounded-3xl border border-white/5 bg-white/[0.02] soft-shadow">
+                {/* Table Header */}
+                <div className="grid grid-cols-5 p-6 border-b border-white/5 bg-black/20 text-slate-500 font-bold uppercase tracking-widest text-[10px]">
+                   <div className="col-span-1">Platform</div>
+                   <div className="col-span-1">Best For</div>
+                   <div className="col-span-1">Automation Type</div>
+                   <div className="col-span-1">Beginner Friendly</div>
+                   <div className="col-span-1 text-center">Action</div>
+                </div>
+                
+                {/* Table Rows */}
+                <div className="divide-y divide-white/5">
+                   <TableRow 
+                     name="Aurum" 
+                     bestFor="Exploring AI Portfolio Automation"
+                     automationType="AI Monitoring"
+                     beginnerFriendly="Yes"
+                     link="https://backoffice.aurum.foundation/u/1W145K"
+                   />
+                   <TableRow 
+                     name="Pionex" 
+                     bestFor="Free Built-in Strategies"
+                     automationType="Grid Trading Bots"
+                     beginnerFriendly="Yes"
+                     link="/tools/pionex"
+                   />
+                   <TableRow 
+                     name="Shrimpy" 
+                     bestFor="Social Copy Trading"
+                     automationType="Portfolio Rebalancing"
+                     beginnerFriendly="Yes"
+                     link="/tools/rebalancing-bot"
+                   />
+                </div>
+             </div>
           </div>
         </div>
       </section>
@@ -209,6 +259,24 @@ export default function Home() {
               href="/blog"
               linkText="Read Insights"
             />
+          </div>
+        </div>
+      </section>
+
+      {/* Trust + Education Section */}
+      <section className="py-24 border-t border-white/5 bg-white/[0.02]">
+        <div className="container mx-auto px-6 max-w-4xl text-center">
+          <div className="inline-flex items-center justify-center p-4 bg-indigo-500/10 rounded-2xl border border-indigo-500/20 mb-8">
+            <Shield className="text-indigo-400" size={32} />
+          </div>
+          <h2 className="text-3xl md:text-5xl font-bold text-white mb-8">Why Investors Are Exploring AI Automation</h2>
+          <p className="text-xl text-slate-400 leading-relaxed font-medium mb-8">
+            Markets move 24 hours a day. AI automation tools allow investors to monitor opportunities, execute strategies, and manage portfolios without constantly watching charts.
+          </p>
+          <div className="p-6 border border-white/5 rounded-2xl bg-[#0f172a] inline-block">
+             <p className="text-slate-400 font-bold italic text-sm">
+               "Automation does not eliminate risk but helps remove emotional decision-making from investing."
+             </p>
           </div>
         </div>
       </section>
@@ -304,6 +372,32 @@ function HubCard({ icon, title, desc, href, linkText }: { icon: React.ReactNode;
           <span>{linkText}</span>
           <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
        </Link>
+    </div>
+  );
+}
+
+function TableRow({ name, bestFor, automationType, beginnerFriendly, link }: { name: string; bestFor: string; automationType: string; beginnerFriendly: string; link: string }) {
+  return (
+    <div className="grid grid-cols-5 p-6 hover:bg-white/[0.03] transition-colors items-center">
+       <div className="col-span-1">
+         <div className="flex items-center space-x-3">
+           <div className="w-8 h-8 rounded bg-white/[0.05] border border-white/10 flex items-center justify-center">
+             <Bot size={14} className="text-indigo-400" />
+           </div>
+           <span className="text-white font-bold">{name}</span>
+         </div>
+       </div>
+       <div className="col-span-1 text-slate-400 text-sm">{bestFor}</div>
+       <div className="col-span-1 text-slate-400 text-sm">{automationType}</div>
+       <div className="col-span-1 text-slate-400 text-sm">
+         <span className="px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-[10px] font-bold uppercase">{beginnerFriendly}</span>
+       </div>
+       <div className="col-span-1 text-center">
+         <Link href={link} className="inline-flex items-center space-x-2 text-indigo-400 hover:text-indigo-300 transition-colors text-xs font-bold uppercase tracking-widest group">
+            <span>Explore</span>
+            <ChevronRight size={14} className="group-hover:translate-x-1 transition-transform" />
+         </Link>
+       </div>
     </div>
   );
 }

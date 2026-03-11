@@ -54,8 +54,12 @@ export default function Footer() {
           />
         </div>
 
-        <div className="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
-          <p className="text-slate-600 text-[10px] font-bold uppercase tracking-widest">
+        <div className="pt-12 border-t border-white/5 flex flex-col items-center justify-center text-center gap-6">
+          <div className="space-y-2 text-slate-500 text-xs font-medium leading-relaxed max-w-3xl">
+            <p className="font-bold text-white uppercase tracking-widest text-[10px]">Educational content only.</p>
+            <p>This website does not provide financial advice. Investing involves risk and users should conduct independent research before using any platform.</p>
+          </div>
+          <p className="text-slate-600 text-[10px] font-bold uppercase tracking-widest mt-4">
             © 2026 AI Wealth Automation Engine. All rights reserved.
           </p>
           <div className="flex items-center space-x-2 text-slate-800">
