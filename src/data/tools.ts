@@ -9,6 +9,8 @@ export interface Tool {
   affiliateLink: string;
   rating: number;
   icon: string;
+  beginnerFriendly: boolean;
+  features: string[];
 }
 
 export const tools: Tool[] = [
@@ -23,6 +25,8 @@ export const tools: Tool[] = [
     affiliateLink: "https://backoffice.aurum.foundation/u/1W145K",
     rating: 4.8,
     icon: "Bot",
+    beginnerFriendly: true,
+    features: ["Beginner Friendly", "Portfolio Automation", "Trading Automation", "Crypto Only"]
   },
   {
     id: "pionex",
@@ -35,6 +39,8 @@ export const tools: Tool[] = [
     affiliateLink: "https://pionex.com",
     rating: 4.8,
     icon: "Bot",
+    beginnerFriendly: true,
+    features: ["Beginner Friendly", "Trading Automation", "Crypto Only"]
   },
   {
     id: "rebalancing-bot",
@@ -47,6 +53,8 @@ export const tools: Tool[] = [
     affiliateLink: "https://shrimpy.io",
     rating: 4.5,
     icon: "TrendingUp",
+    beginnerFriendly: true,
+    features: ["Beginner Friendly", "Portfolio Automation", "Crypto Only"]
   },
   {
     id: "ledger",
@@ -59,6 +67,8 @@ export const tools: Tool[] = [
     affiliateLink: "https://ledger.com",
     rating: 4.9,
     icon: "Shield",
+    beginnerFriendly: true,
+    features: ["Security / Storage", "Crypto Only"]
   },
   {
     id: "binance",
@@ -71,5 +81,7 @@ export const tools: Tool[] = [
     affiliateLink: "https://binance.com",
     rating: 4.7,
     icon: "Coins",
+    beginnerFriendly: false,
+    features: ["Risk Monitoring", "Crypto Only"]
   }
 ];

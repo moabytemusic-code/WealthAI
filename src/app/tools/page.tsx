@@ -7,20 +7,23 @@ import { Search, ArrowUpRight, Bot, Star } from "lucide-react";
 import { useState, useMemo } from "react";
 import Link from "next/link";
 
-const categories = ["All", "Trading Bots", "Yield Aggregators", "Portfolio Tools", "Security"];
+const categories = ["All", "AI Investing Apps", "Crypto Exchanges", "Portfolio Monitoring Tools", "Risk Protection Platforms", "Wallets / Security Tools"];
+const allFeatures = ["Beginner Friendly", "Portfolio Automation", "Trading Automation", "Risk Monitoring", "Crypto Only", "Multi-Asset", "Security / Storage"];
 
 export default function ToolDirectory() {
   const [searchQuery, setSearchQuery] = useState("");
   const [activeCategory, setActiveCategory] = useState("All");
+  const [activeFeature, setActiveFeature] = useState("");
 
   const filteredTools = useMemo(() => {
     return tools.filter((tool) => {
       const matchesSearch = tool.name.toLowerCase().includes(searchQuery.toLowerCase()) || 
                             tool.tagline.toLowerCase().includes(searchQuery.toLowerCase());
       const matchesCategory = activeCategory === "All" || tool.category === activeCategory;
-      return matchesSearch && matchesCategory;
+      const matchesFeature = !activeFeature || (tool.features && tool.features.includes(activeFeature));
+      return matchesSearch && matchesCategory && matchesFeature;
     });
-  }, [searchQuery, activeCategory]);
+  }, [searchQuery, activeCategory, activeFeature]);
 
   return (
     <main className="min-h-screen relative selection:bg-indigo-500/30">
@@ -30,10 +33,10 @@ export default function ToolDirectory() {
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto text-center mb-20 animate-fade-in">
             <h1 className="text-4xl md:text-6xl font-display font-bold text-white mb-8">
-              Strategic <span className="text-gradient">Tool Directory</span>
+              Explore AI <span className="text-gradient">Investing Apps</span>
             </h1>
             <p className="text-lg text-slate-400 max-w-2xl mx-auto leading-relaxed font-medium">
-              Vetted automation platforms and institutional-grade tools to scale your digital asset portfolio.
+              Browse the platforms investors are exploring to automate portfolio management, monitor markets, and simplify crypto investing.
             </p>
           </div>
 
@@ -43,7 +46,7 @@ export default function ToolDirectory() {
               <Search className="absolute left-5 top-1/2 -translate-y-1/2 text-slate-500 group-focus-within:text-indigo-400 transition-colors" size={18} />
               <input
                 type="text"
-                placeholder="Search institutional tools..."
+                placeholder="Search AI investing apps..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 className="w-full bg-[#0f172a]/80 backdrop-blur-xl border border-white/5 rounded-2xl py-4.5 pl-14 pr-6 text-white placeholder:text-slate-600 focus:outline-none focus:border-indigo-500/50 transition-all soft-shadow"
@@ -51,20 +54,51 @@ export default function ToolDirectory() {
             </div>
 
             {/* Category Filter */}
-            <div className="flex items-center space-x-2 overflow-x-auto pb-4 no-scrollbar w-full md:w-auto">
-              {categories.map((cat) => (
+            <div className="flex flex-col gap-4 w-full md:w-auto overflow-hidden">
+              {/* Primary Categories */}
+              <div className="flex items-center space-x-2 overflow-x-auto pb-2 no-scrollbar w-full">
+                {categories.map((cat) => (
+                  <button
+                    key={cat}
+                    onClick={() => setActiveCategory(cat)}
+                    className={`px-6 py-2.5 rounded-xl text-xs font-bold uppercase tracking-widest transition-all whitespace-nowrap border ${
+                      activeCategory === cat
+                        ? "primary-gradient border-transparent text-white soft-shadow"
+                        : "bg-white/[0.03] border-white/5 text-slate-500 hover:text-slate-300 hover:bg-white/[0.06]"
+                    }`}
+                  >
+                    {cat}
+                  </button>
+                ))}
+              </div>
+              
+              {/* Feature Tags (Secondary Filter) */}
+              <div className="flex items-center space-x-2 overflow-x-auto pb-2 no-scrollbar w-full">
+                <span className="text-slate-500 text-[10px] font-bold uppercase tracking-widest mr-2 flex-shrink-0">Filter By Feature:</span>
                 <button
-                  key={cat}
-                  onClick={() => setActiveCategory(cat)}
-                  className={`px-6 py-2.5 rounded-xl text-xs font-bold uppercase tracking-widest transition-all whitespace-nowrap border ${
-                    activeCategory === cat
-                      ? "primary-gradient border-transparent text-white soft-shadow"
-                      : "bg-white/[0.03] border-white/5 text-slate-500 hover:text-slate-300 hover:bg-white/[0.06]"
+                  onClick={() => setActiveFeature("")}
+                  className={`px-4 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-widest transition-all whitespace-nowrap border ${
+                    activeFeature === ""
+                      ? "bg-slate-700 border-transparent text-white soft-shadow"
+                      : "bg-transparent border-white/5 text-slate-500 hover:text-slate-300 hover:bg-white/[0.04]"
                   }`}
                 >
-                  {cat}
+                  All Features
                 </button>
-              ))}
+                {allFeatures.map((feat) => (
+                  <button
+                    key={feat}
+                    onClick={() => setActiveFeature(feat)}
+                    className={`px-4 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-widest transition-all whitespace-nowrap border ${
+                      activeFeature === feat
+                        ? "bg-emerald-500/10 border-emerald-500/30 text-emerald-400 soft-shadow"
+                        : "bg-transparent border-white/5 text-slate-500 hover:text-slate-300 hover:bg-white/[0.04]"
+                    }`}
+                  >
+                    {feat}
+                  </button>
+                ))}
+              </div>
             </div>
           </div>
 
@@ -79,7 +113,7 @@ export default function ToolDirectory() {
             <div className="text-center py-32 bg-white/[0.02] rounded-[40px] border border-dashed border-white/5">
               <Search className="mx-auto text-slate-700 mb-6" size={48} />
               <p className="text-slate-400 text-lg font-medium">No tools found matching your criteria.</p>
-              <button onClick={() => {setSearchQuery(""); setActiveCategory("All");}} className="mt-4 text-indigo-400 font-bold uppercase tracking-widest text-xs hover:underline">Clear all filters</button>
+              <button onClick={() => {setSearchQuery(""); setActiveCategory("All"); setActiveFeature("");}} className="mt-4 text-indigo-400 font-bold uppercase tracking-widest text-xs hover:underline">Clear all filters</button>
             </div>
           )}
         </div>
@@ -98,9 +132,16 @@ function ToolCard({ tool }: { tool: any }) { // eslint-disable-line @typescript-
           <div className="w-16 h-16 bg-white/[0.03] border border-white/5 rounded-2xl flex items-center justify-center group-hover:scale-110 group-hover:bg-indigo-500/10 transition-all duration-500">
              <Bot className="text-indigo-400" size={28} />
           </div>
-          <div className="flex items-center space-x-1.5 px-3 py-1 bg-emerald-500/5 rounded-full text-emerald-400 text-[10px] font-bold uppercase tracking-widest border border-emerald-500/10">
-            <Star size={10} className="fill-emerald-400" />
-            <span>{tool.rating} Rating</span>
+          <div className="flex flex-col items-end space-y-2">
+            <div className="flex items-center space-x-1.5 px-3 py-1 bg-emerald-500/5 rounded-full text-emerald-400 text-[10px] font-bold uppercase tracking-widest border border-emerald-500/10">
+              <Star size={10} className="fill-emerald-400" />
+              <span>{tool.rating} Rating</span>
+            </div>
+            {tool.beginnerFriendly && (
+              <div className="px-3 py-1 bg-indigo-500/5 rounded-full text-indigo-400 text-[10px] font-bold uppercase tracking-widest border border-indigo-500/20">
+                Beginner Friendly
+              </div>
+            )}
           </div>
         </div>
 
@@ -112,7 +153,7 @@ function ToolCard({ tool }: { tool: any }) { // eslint-disable-line @typescript-
         <div className="mt-auto pt-8 border-t border-white/5 flex items-center justify-between">
           <span className="text-[10px] font-bold uppercase tracking-widest text-slate-600">{tool.category}</span>
           <div className="flex items-center space-x-2 text-white text-xs font-bold uppercase tracking-widest group-hover:text-indigo-400 transition-colors">
-            <span>Examine Asset</span>
+            <span>Explore Platform</span>
             <ArrowUpRight size={14} strokeWidth={2.5} />
           </div>
         </div>

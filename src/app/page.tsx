@@ -192,11 +192,12 @@ export default function Home() {
           <div className="overflow-x-auto pb-6">
              <div className="min-w-[800px] w-full rounded-3xl border border-white/5 bg-white/[0.02] soft-shadow">
                 {/* Table Header */}
-                <div className="grid grid-cols-5 p-6 border-b border-white/5 bg-black/20 text-slate-500 font-bold uppercase tracking-widest text-[10px]">
+                <div className="grid grid-cols-6 p-6 border-b border-white/5 bg-black/20 text-slate-500 font-bold uppercase tracking-widest text-[10px]">
                    <div className="col-span-1">Platform</div>
                    <div className="col-span-1">Best For</div>
                    <div className="col-span-1">Automation Type</div>
                    <div className="col-span-1">Beginner Friendly</div>
+                   <div className="col-span-1">Things to Consider</div>
                    <div className="col-span-1 text-center">Action</div>
                 </div>
                 
@@ -207,6 +208,7 @@ export default function Home() {
                      bestFor="Exploring AI Portfolio Automation"
                      automationType="AI Monitoring"
                      beginnerFriendly="Yes"
+                     consider="Requires strategy setup."
                      link="https://backoffice.aurum.foundation/u/1W145K"
                    />
                    <TableRow 
@@ -214,6 +216,7 @@ export default function Home() {
                      bestFor="Free Built-in Strategies"
                      automationType="Grid Trading Bots"
                      beginnerFriendly="Yes"
+                     consider="More complex UI elements."
                      link="/tools/pionex"
                    />
                    <TableRow 
@@ -221,6 +224,7 @@ export default function Home() {
                      bestFor="Social Copy Trading"
                      automationType="Portfolio Rebalancing"
                      beginnerFriendly="Yes"
+                     consider="Monthly subscription cost."
                      link="/tools/rebalancing-bot"
                    />
                 </div>
@@ -259,6 +263,68 @@ export default function Home() {
               href="/blog"
               linkText="Read Insights"
             />
+          </div>
+        </div>
+      </section>
+
+      {/* Recommended AI Investing Platforms (Scalable Offer Block) */}
+      <section className="py-24 bg-white/[0.02] border-t border-white/5">
+        <div className="container mx-auto px-6 max-w-5xl">
+          <div className="mb-16">
+             <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">Recommended AI <span className="text-gradient">Investing Platforms</span></h2>
+             <p className="text-slate-400 text-lg">
+               A curated selection of the premier tools we recommend exploring right now across the AI investing ecosystem.
+             </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <Link href="/tools/aurum" className="bg-[#0f172a] border border-white/5 rounded-3xl p-8 hover:border-indigo-500/30 transition-all group">
+              <div className="w-12 h-12 bg-white/[0.03] border border-white/5 rounded-xl flex items-center justify-center mb-6">
+                <Bot className="text-indigo-400" size={24} />
+              </div>
+              <h3 className="font-bold text-white text-xl mb-2">Automate Portfolio</h3>
+              <p className="text-slate-400 text-sm mb-6">AI apps for strategy creation.</p>
+              <span className="text-indigo-400 font-bold uppercase tracking-widest text-[10px] flex items-center space-x-2 group-hover:text-indigo-300">
+                <span>Explore Top Pick</span>
+                <ArrowRight size={12} className="group-hover:translate-x-1 transition-transform" />
+              </span>
+            </Link>
+
+            <Link href="/tools/binance" className="bg-[#0f172a] border border-white/5 rounded-3xl p-8 hover:border-indigo-500/30 transition-all group">
+              <div className="w-12 h-12 bg-white/[0.03] border border-white/5 rounded-xl flex items-center justify-center mb-6">
+                <Search className="text-purple-400" size={24} />
+              </div>
+              <h3 className="font-bold text-white text-xl mb-2">Trade & Exchange</h3>
+              <p className="text-slate-400 text-sm mb-6">Top liquidity platforms.</p>
+              <span className="text-purple-400 font-bold uppercase tracking-widest text-[10px] flex items-center space-x-2 group-hover:text-purple-300">
+                <span>Explore Exchanges</span>
+                <ArrowRight size={12} className="group-hover:translate-x-1 transition-transform" />
+              </span>
+            </Link>
+
+            <Link href="/tools/ledger" className="bg-[#0f172a] border border-white/5 rounded-3xl p-8 hover:border-indigo-500/30 transition-all group">
+              <div className="w-12 h-12 bg-white/[0.03] border border-white/5 rounded-xl flex items-center justify-center mb-6">
+                <Shield className="text-emerald-400" size={24} />
+              </div>
+              <h3 className="font-bold text-white text-xl mb-2">Wallet Security</h3>
+              <p className="text-slate-400 text-sm mb-6">Protect your digital assets.</p>
+              <span className="text-emerald-400 font-bold uppercase tracking-widest text-[10px] flex items-center space-x-2 group-hover:text-emerald-300">
+                <span>Explore Wallets</span>
+                <ArrowRight size={12} className="group-hover:translate-x-1 transition-transform" />
+              </span>
+            </Link>
+
+            <Link href="/tools/rebalancing-bot" className="bg-[#0f172a] border border-white/5 rounded-3xl p-8 hover:border-indigo-500/30 transition-all group">
+              <div className="w-12 h-12 bg-white/[0.03] border border-white/5 rounded-xl flex items-center justify-center mb-6">
+                <TrendingUp className="text-blue-400" size={24} />
+              </div>
+              <h3 className="font-bold text-white text-xl mb-2">Risk Monitoring</h3>
+              <p className="text-slate-400 text-sm mb-6">Monitor global metrics 24/7.</p>
+              <span className="text-blue-400 font-bold uppercase tracking-widest text-[10px] flex items-center space-x-2 group-hover:text-blue-300">
+                <span>Explore Dashboards</span>
+                <ArrowRight size={12} className="group-hover:translate-x-1 transition-transform" />
+              </span>
+            </Link>
           </div>
         </div>
       </section>
@@ -376,12 +442,12 @@ function HubCard({ icon, title, desc, href, linkText }: { icon: React.ReactNode;
   );
 }
 
-function TableRow({ name, bestFor, automationType, beginnerFriendly, link }: { name: string; bestFor: string; automationType: string; beginnerFriendly: string; link: string }) {
+function TableRow({ name, bestFor, automationType, beginnerFriendly, consider, link }: { name: string; bestFor: string; automationType: string; beginnerFriendly: string; consider: string; link: string }) {
   return (
-    <div className="grid grid-cols-5 p-6 hover:bg-white/[0.03] transition-colors items-center">
+    <div className="grid grid-cols-6 p-6 hover:bg-white/[0.03] transition-colors items-center">
        <div className="col-span-1">
          <div className="flex items-center space-x-3">
-           <div className="w-8 h-8 rounded bg-white/[0.05] border border-white/10 flex items-center justify-center">
+           <div className="w-8 h-8 rounded bg-white/[0.05] border border-white/10 flex items-center justify-center flex-shrink-0">
              <Bot size={14} className="text-indigo-400" />
            </div>
            <span className="text-white font-bold">{name}</span>
@@ -391,6 +457,9 @@ function TableRow({ name, bestFor, automationType, beginnerFriendly, link }: { n
        <div className="col-span-1 text-slate-400 text-sm">{automationType}</div>
        <div className="col-span-1 text-slate-400 text-sm">
          <span className="px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-[10px] font-bold uppercase">{beginnerFriendly}</span>
+       </div>
+       <div className="col-span-1 text-slate-400 text-xs italic">
+         {consider}
        </div>
        <div className="col-span-1 text-center">
          <Link href={link} className="inline-flex items-center space-x-2 text-indigo-400 hover:text-indigo-300 transition-colors text-xs font-bold uppercase tracking-widest group">
